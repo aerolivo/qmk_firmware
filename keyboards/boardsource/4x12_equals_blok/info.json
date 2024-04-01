@@ -1,13 +1,13 @@
 {
   "manufacturer": "Boardsource",
-  "keyboard_name": "4x12",
+  "keyboard_name": "4x12 equals 48",
   "maintainer": "waffle87",
   "development_board": "promicro",
   "diode_direction": "COL2ROW",
   "features": {
     "bootmagic": true,
-    "extrakey": true,
-    "mousekey": true
+    "extrakey":  true,
+    "mousekey":  true
   },
   "matrix_pins": {
     "cols": ["F4", "F5", "F6", "F7", "B1", "B3", "B2", "B6", "B5", "B4", "E6", "D7"],

@@ -9,7 +9,8 @@ enum layers {
     _RAISE,
     _RAISE_2,
     _LOWER,
-    _LOWER_2
+    _LOWER_2,
+    _NAVIGATE
 };
 
 #define MAIN        OSL(_MAIN)
@@ -17,13 +18,14 @@ enum layers {
 #define LOWER_2     OSL(_LOWER_2)
 #define RAISE       OSL(_RAISE)
 #define RAISE_2     OSL(_RAISE_2)
+#define NAV         OSL(_NAVIGATE)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_MAIN] = LAYOUT_ortho_4x12(
     KC_ESC,     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,       KC_Y,       KC_U,       KC_I,       KC_O,           KC_P,               KC_BSPC,
     KC_TAB,     KC_A,       KC_S,       KC_D,       KC_F,       KC_G,       KC_H,       KC_J,       KC_K,       KC_L,           KC_SCLN,            KC_QUOT,
     KC_LSFT,    KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       KC_N,       KC_M,       KC_COMM,    RALT_T(KC_DOT), RSFT_T(KC_SLSH),    RSFT_T(KC_ENT),
-    KC_LCTL,    KC_LGUI,    KC_LALT,    MAIN,       LOWER,      KC_SPC,     KC_SPC,     RAISE,      KC_LEFT,    KC_DOWN,        KC_UP,              KC_RGHT
+    KC_LCTL,    KC_LGUI,    KC_LALT,    NAV,        LOWER,      KC_SPC,     KC_SPC,     RAISE,      KC_LEFT,    KC_DOWN,        KC_UP,              KC_RGHT
   ),
   //
   [_RAISE] = LAYOUT_ortho_4x12(
@@ -52,5 +54,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     RGB_TOG,    RGB_MOD,    RGB_RMOD,   KC_F3,      KC_F4,      KC_F5,      KC_F6,      KC_MINS,    KC_EQL,     KC_LBRC,    KC_RBRC,    KC_BSLS,
     BL_TOGG,    BL_STEP,    BL_UP,      KC_F9,      KC_F10,     KC_F11,     KC_F12,     KC_NUHS,    KC_NUBS,    KC_PGUP,    KC_PGDN,    _______,
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
+  ),
+  // 
+  [_NAVIGATE] = LAYOUT_ortho_4x12(
+    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_HOME,
+    _______,    _______,    _______,    _______,    _______,    _______,    KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,    _______,    KC_PGUP,
+    _______,    _______,    _______,    _______,    _______,    KC_BTN1,    KC_MS_L,    KC_MS_D,    KC_MS_U,    KC_MS_R,    KC_BTN2,    KC_PGDN,
+    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_END
   )
 };
