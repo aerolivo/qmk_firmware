@@ -6,7 +6,6 @@ OS_DETECTION_ENABLE = yes
 # Enabling mouse movement
 MOUSEKEY_ENABLE = yes
 
-
 # Backlight
 BACKLIGHT_ENABLE = yes
 
